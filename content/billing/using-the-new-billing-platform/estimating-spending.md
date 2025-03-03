@@ -15,6 +15,10 @@ product: '{% data reusables.billing.enhanced-billing-platform-product %}'
 shortTitle: Estimate spending
 ---
 
+> [!NOTE]
+> If you are using GitHub’s enhanced billing platform, we will be updating our usage ingestion 
+> from minute to hourly beginning April 4, 2025.
+
 The new billing platform provides a high-level view of your spending trends based on the usage across products. You can use this information to estimate your spending and make informed decisions about your budget.
 
 {% ifversion fpt %}
