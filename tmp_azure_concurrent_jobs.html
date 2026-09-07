@@ -1,0 +1,1732 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>Configure and pay for parallel jobs - Azure DevOps | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Configure parallel jobs in Azure Pipelines and pay for them" />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="Configure and pay for parallel jobs - Azure DevOps" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops" />
+			<meta property="og:description" content="Configure parallel jobs in Azure Pipelines and pay for them" />
+			<meta name="platform_id" content="1a50f268-3882-894f-35bf-827e0bae61cb" /> <meta name="scope" content="Azure DevOps Services" />
+			<meta name="locale" content="en-us" />
+			 <meta name="adobe-target" content="true" /> 
+			<meta name="uhfHeaderId" content="MSDocsHeader-AzureDevOps" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="feedback_product_url" content="https://developercommunity.visualstudio.com/AzureDevOps" />
+	
+		<meta name="breadcrumb_path" content="/azure/devops/breadcrumb/toc.json" />
+	
+		<meta name="archive_url" content="https://docs.microsoft.com/en-us/previous-versions/azure/devops/all/" />
+	
+		<meta name="ms.topic" content="how-to" />
+	
+		<meta name="ms.manager" content="mijacobs" />
+	
+		<meta name="author" content="juliakm" />
+	
+		<meta name="ms.author" content="jukullam" />
+	
+		<meta name="ms.date" content="2025-04-14T00:00:00Z" />
+	
+		<meta name="ms.service" content="azure-devops-pipelines" />
+	
+		<meta name="ms.version" content="ALM" />
+	
+		<meta name="MSHAttr.msprod" content="ms.prod:ALM" />
+	
+		<meta name="ms.prodfamily" content="ALM" />
+	
+		<meta name="ms.subservice" content="azure-devops-pipelines-licensing" />
+	
+		<meta name="exclude_monikers" content="azure-devops-2019" />
+	
+		<meta name="ms.assetid" content="FAFB2DE4-F462-4E9E-8312-4F343F2A35B8" />
+	
+		<meta name="monikerRange" content="&lt;= azure-devops" />
+	
+		<meta name="document_id" content="43d1ea36-caf8-c3f6-95f3-2d40ead86f5a" />
+	
+		<meta name="document_version_independent_id" content="46755386-7c55-bd3a-7984-30687a4e94f3" />
+	
+		<meta name="updated_at" content="2025-10-10T14:03:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/azure-devops-docs-pr/blob/live/docs/pipelines/licensing/concurrent-jobs.md" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/azure-devops-docs-pr/blob/c5ae919bb08567f72da7bb383e3d399126ea24f9/docs/pipelines/licensing/concurrent-jobs.md" />
+	
+		<meta name="git_commit_id" content="c5ae919bb08567f72da7bb383e3d399126ea24f9" />
+	
+		<meta name="monikers" content="azure-devops-2020" />
+	
+		<meta name="monikers" content="azure-devops-2022" />
+	
+		<meta name="monikers" content="azure-devops-server" />
+	
+		<meta name="monikers" content="azure-devops" />
+	
+		<meta name="default_moniker" content="azure-devops" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="MSDN.azure-devops-docs" />
+	
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="toc_rel" content="../toc.json" />
+	
+		<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/MSDN.azure-devops-docs/{branchName}{pdfName}" />
+	
+		<meta name="feedback_help_link_type" content="" />
+	
+		<meta name="feedback_help_link_url" content="" />
+	
+		<meta name="word_count" content="2073" />
+	
+		<meta name="config_moniker_range" content="azure-devops || &gt;= azure-devops-2020 &lt;= azure-devops-server" />
+	
+		<meta name="asset_id" content="pipelines/licensing/concurrent-jobs" />
+	
+		<meta name="moniker_range_name" content="85afb20747e10049bd85eca272dcc04e" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="docs/pipelines/licensing/concurrent-jobs.md" />
+	
+		<meta name="previous_tlsh_hash" content="40C84242420D8710EAB23FC22936C54193F196B1DEBCDDDD4324BED18C653DB9C368AE41BB1AF3404671864123D29FCD99B2AF3682FD9259C9B1583C831C2316B6492BBB9D" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/azure-devops-docs/blob/main/docs/pipelines/licensing/concurrent-jobs.md" />
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/5bd2b3fa-c186-4b92-a3c8-09f22a249d37" data-source="generated" />
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7960090f-b1c1-4f33-accd-7f42c377c619" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7eba7926-b7b2-4a7a-bf89-e6ac53b3e7f6" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/61f08768-d46a-4092-af3e-b449ce915a2b" data-source="generated" />
+	
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03258.7338-a666db62/styles/site-ltr.css" />
+			<link rel="preconnect" href="//mscom.demdex.net" crossorigin />
+						<link rel="dns-prefetch" href="//target.microsoft.com" />
+						<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net" />
+						<link
+							rel="preload"
+							as="script"
+							href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+							integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+							crossorigin="anonymous"
+							id="adobe-target-script"
+							type="application/javascript"
+						/>
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			<script src="/_themes/docs.theme/master/en-us/_themes/global/deprecation.js"></script>
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "",
+    "feedbackHelpLinkUrl": "",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "",
+    "feedbackProductUrl": "https://developercommunity.visualstudio.com/AzureDevOps",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": true,
+    "contributors": [
+      {
+        "name": "juliakm",
+        "url": "https://github.com/juliakm"
+      },
+      {
+        "name": "v-thepet",
+        "url": "https://github.com/v-thepet"
+      },
+      {
+        "name": "steved0x",
+        "url": "https://github.com/steved0x"
+      },
+      {
+        "name": "cebundy",
+        "url": "https://github.com/cebundy"
+      },
+      {
+        "name": "chcomley",
+        "url": "https://github.com/chcomley"
+      },
+      {
+        "name": "silviuandrica",
+        "url": "https://github.com/silviuandrica"
+      },
+      {
+        "name": "alexbuckgit",
+        "url": "https://github.com/alexbuckgit"
+      },
+      {
+        "name": "prmerger-automator[bot]",
+        "url": "https://github.com/prmerger-automator[bot]"
+      },
+      {
+        "name": "KathrynEE",
+        "url": "https://github.com/KathrynEE"
+      },
+      {
+        "name": "Kenneth-Abrams",
+        "url": "https://github.com/Kenneth-Abrams"
+      },
+      {
+        "name": "ktoliver",
+        "url": "https://github.com/ktoliver"
+      },
+      {
+        "name": "alexander-smolyakov",
+        "url": "https://github.com/alexander-smolyakov"
+      },
+      {
+        "name": "vijaymatest1",
+        "url": "https://github.com/vijaymatest1"
+      },
+      {
+        "name": "mijacobs",
+        "url": "https://github.com/mijacobs"
+      },
+      {
+        "name": "PRMerger10",
+        "url": "https://github.com/PRMerger10"
+      },
+      {
+        "name": "DCtheGeek",
+        "url": "https://github.com/DCtheGeek"
+      },
+      {
+        "name": "ramiMSFT",
+        "url": "https://github.com/ramiMSFT"
+      },
+      {
+        "name": "PRMerger17",
+        "url": "https://github.com/PRMerger17"
+      },
+      {
+        "name": "thomps23",
+        "url": "https://github.com/thomps23"
+      },
+      {
+        "name": "danhellem",
+        "url": "https://github.com/danhellem"
+      }
+    ]
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script src="/static/assets/0.4.03258.7338-a666db62/scripts/en-us/index-docs.js"></script>
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<header
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				role="banner"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+				></div>
+			</header>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu display-flex"
+					data-bi-name="menu"
+			  >
+					<div
+		id="left-container"
+		class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full"
+	>
+		<nav
+			id="affixed-left-container"
+			class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+			aria-label="Primary"
+		></nav>
+	</div>
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit editor mode</span>
+			</button>
+		</div>
+	</div>
+			<div data-main-column class="padding-sm padding-top-none padding-top-sm-tablet">
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			class="button button-sm flex-shrink-0 margin-right-xxs display-none display-inline-flex-desktop"
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Focus mode</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="button-block button-sm inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon">
+				<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+			</span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	 
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	
+					
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to plan</span>
+		</button>
+	  
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			
+			href="https://github.com/MicrosoftDocs/azure-devops-docs/blob/main/docs/pipelines/licensing/concurrent-jobs.md"
+			data-original_content_git_url="https://github.com/MicrosoftDocs/azure-devops-docs-pr/blob/live/docs/pipelines/licensing/concurrent-jobs.md"
+			data-original_content_git_url_template="{repo}/blob/{branch}/docs/pipelines/licensing/concurrent-jobs.md"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	
+					
+		<hr class="margin-block-xxs" />
+		<h4 class="font-size-sm padding-left-xxs">Share via</h4>
+		
+					<a
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-facebook"
+						data-bi-name="facebook"
+						data-page-action-item="overflow-all"
+						href="#"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-facebook-share"></span>
+						</span>
+						<span>Facebook</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-twitter"
+						data-bi-name="twitter"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-text" aria-hidden="true">
+							<span class="docon docon-xlogo-share"></span>
+						</span>
+						<span>x.com</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-linkedin"
+						data-bi-name="linkedin"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-linked-in-logo"></span>
+						</span>
+						<span>LinkedIn</span>
+					</a>
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-email"
+						data-bi-name="email"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-mail-message"></span>
+						</span>
+						<span>Email</span>
+					</a>
+			  
+	 
+		<hr class="margin-block-xxs" />
+		<button
+			class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			type="button"
+			data-bi-name="print"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			data-print-page
+			data-check-hidden="true"
+		>
+			<span class="icon color-primary" aria-hidden="true">
+				<span class="docon docon-print"></span>
+			</span>
+			<span>Print</span>
+		</button>
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon">
+							<span class="docon docon-exclamation-circle-solid" aria-hidden="true"></span>
+						</span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="configure-and-pay-for-parallel-jobs">Configure and pay for parallel jobs</h1></div>
+					
+		<div
+			id="article-metadata"
+			data-bi-name="article-metadata"
+			data-test-id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	 
+		<div data-id="ai-summary-on-docs" hidden>
+			<div id="ms--ai-summary">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-sparkle-fill gradient-text-vivid"></span>
+				</span>
+				<button
+					type="button"
+					class="tag tag-sm tag-suggestion"
+					data-test-id="ai-summary-cta"
+					data-bi-name="ai-summary-cta"
+					data-an="ai-summary"
+				>
+					<span class="ai-summary-cta-text">
+						Summarize this article for me
+					</span>
+				</button>
+			</div>
+			<!-- Slot where the client will render the summary card after the user clicks the CTA -->
+			<div id="ms--ai-summary-header"></div>
+		</div>
+	 
+		<nav
+			id="center-doc-outline"
+			class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				In this article
+			</h2>
+		</nav>
+	
+					<div class="content"><p><strong>Azure DevOps Services | Azure DevOps Server | Azure DevOps Server 2022 | Azure DevOps Server 2020</strong></p>
+<div data-moniker="azure-devops-2020 azure-devops-2022 azure-devops-server">
+<div class="IMPORTANT">
+<p>Important</p>
+<p>Starting with Azure DevOps Server 2019, you don't have to pay for self-hosted concurrent jobs in releases. You're only limited by the number of agents that you have.</p>
+</div>
+</div>
+<div data-moniker="azure-devops">
+<p>Learn how to estimate how many parallel jobs you need and buy more parallel jobs for your organization.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>The free grant of parallel jobs for public projects and for certain private projects in new organizations is temporarily disabled. However, you can request this grant by submitting <a href="https://aka.ms/azpipelines-parallelism-request" data-linktype="external">a request</a>. Existing organizations and projects aren't affected. It can take several business days to process your free tier requests. During certain time periods, processing times might be longer.</p>
+</div>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Azure DevOps</strong></td>
+<td>- An <a href="../../organizations/projects/create-project?view=azure-devops" data-linktype="relative-path">Azure DevOps project</a>. <br> - Basic knowledge of YAML and Azure Pipelines. For more information, see <a href="../create-first-pipeline?view=azure-devops" data-linktype="relative-path">Create your first pipeline</a>. <br> - <strong>Permissions:</strong><br>      &nbsp;&nbsp;&nbsp;&nbsp; Member of the <a href="../../organizations/security/look-up-project-collection-administrators?view=azure-devops" data-linktype="relative-path"><strong>Project Collection Administrators</strong> security group</a>. If you created the organization or collection, you're automatically a member of this group. <br> - <strong>Billing:</strong> <br>  &nbsp;&nbsp;&nbsp;&nbsp; Billing must be <a href="../../organizations/billing/set-up-billing-for-your-organization-vs?view=azure-devops" data-linktype="relative-path">set up for your organization</a>.</td>
+</tr>
+<tr>
+<td><strong>Azure</strong></td>
+<td>An <a href="https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn" data-linktype="external">Azure subscription</a>.</td>
+</tr>
+</tbody>
+</table>
+<div data-moniker="azure-devops">
+<h2 id="what-is-a-parallel-job">What is a parallel job?</h2>
+<p>When you define a pipeline, you can define it as a collection of <a href="../process/phases?view=azure-devops" data-linktype="relative-path">jobs</a>. When a pipeline runs, you can run multiple jobs as part of that pipeline. Each running job consumes a <em>parallel job</em> that runs on an agent. When there aren't enough parallel jobs available for your organization, the jobs are queued up and run one after the other.</p>
+<p>In Azure Pipelines, you can run parallel jobs on Microsoft-hosted infrastructure or your own (self-hosted) infrastructure. Each parallel job allows you to run a single job at a time in your organization. You don't need to pay for parallel jobs if you're using an on-premises server. The concept of parallel jobs only applies to Azure DevOps Services.</p>
+<h3 id="microsoft-hosted-vs-self-hosted-parallel-jobs">Microsoft-hosted vs. self-hosted parallel jobs</h3>
+<p>If you want to run your jobs on machines that Microsoft manages, use <em>Microsoft-hosted parallel jobs</em>. Your jobs run on <a href="../agents/hosted?view=azure-devops" data-linktype="relative-path">Microsoft-hosted agents</a>.</p>
+<p>If you want Azure Pipelines to orchestrate your builds and releases, but use your own machines to run them, use <em>self-hosted parallel jobs</em>. For self-hosted parallel jobs, you start by deploying our <a href="../agents/agents?view=azure-devops#self-hosted-agents" data-linktype="relative-path">self-hosted agents</a> on your machines. You can register any number of these self-hosted agents in your organization.</p>
+</div>
+<div data-moniker="azure-devops">
+<h2 id="how-much-do-parallel-jobs-cost">How much do parallel jobs cost?</h2>
+<p>We provide a <em>free tier</em> of service by default in every organization for both hosted and self-hosted parallel jobs.
+Parallel jobs are purchased at the organization level, and shared by all projects in an organization.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_ms-hosted" role="tab" aria-controls="tabpanel_1_ms-hosted" data-tab="ms-hosted" tabindex="0" aria-selected="true" data-linktype="self-bookmark">Microsoft-hosted</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_self-hosted" role="tab" aria-controls="tabpanel_1_self-hosted" data-tab="self-hosted" tabindex="-1" data-linktype="self-bookmark">Self-hosted</a>
+</li>
+</ul>
+<section id="tabpanel_1_ms-hosted" role="tabpanel" data-tab="ms-hosted">
+
+<p>For Microsoft-hosted parallel jobs, you can get up to 10 free Microsoft-hosted parallel jobs that can run for up to 360 minutes (6 hours) each time for <strong>public projects</strong>. When you create a new Azure DevOps organization, you aren't given this free grant by default.</p>
+<p>For <strong>private projects</strong>, you can get one free job that can run for up to 60 minutes each time. When you create a new Azure DevOps organization, you might not always be given this free grant by default.</p>
+<p>To request the free grant for public or private projects, submit <a href="https://aka.ms/azpipelines-parallelism-request" data-linktype="external">a request</a>.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>It can take several business days to process your free tier request. During certain time periods, processing times might be longer.</p>
+</div>
+<p>There's no time limit on parallel jobs for public projects and a 30 hour time limit per month for private projects.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Number of parallel jobs</th>
+<th>Time limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Public project</strong></td>
+<td>Up to 10 free Microsoft-hosted parallel jobs that can run for up to 360 minutes (6 hours) each time</td>
+<td>No overall time limit per month</td>
+</tr>
+<tr>
+<td><strong>Private project</strong></td>
+<td>One free job that can run for up to 60 minutes each time</td>
+<td>1,800 minutes (30 hours) per month</td>
+</tr>
+</tbody>
+</table>
+<p>When the free tier is no longer sufficient, you can pay for more capacity per parallel job. For pricing cost per parallel job, see the <a href="https://azure.microsoft.com/pricing/details/devops/azure-devops-services/" data-linktype="external">Azure DevOps pricing page</a>. Paid parallel jobs remove the monthly time limit and allow you to run each job for up to 360 minutes (6 hours).</p>
+<p><a href="#how-do-i-buy-more-parallel-jobs" data-linktype="self-bookmark">Buy Microsoft-hosted parallel jobs</a>.</p>
+<p>New organizations have a maximum limit of 25 parallel jobs for Microsoft-hosted agents. <a href="https://azure.microsoft.com/support/devops/" data-linktype="external">Contact support</a> to request a limit increase. Limit increases are subject to capacity in your organization's region.</p>
+<p>When you purchase your first Microsoft-hosted parallel job, the number of parallel jobs you have in the organization is still one. To be able to run two jobs concurrently, you need to purchase two parallel jobs if you're currently on the free tier. The first purchase only removes the time limits on the first job.</p>
+<div class="TIP">
+<p>Tip</p>
+<p>If your pipeline exceeds the maximum job timeout, try splitting your pipeline
+into multiple jobs. For more information on jobs, see
+<a href="../process/phases?view=azure-devops" data-linktype="relative-path">Specify jobs in your pipeline</a>.</p>
+</div>
+</section>
+<section id="tabpanel_1_self-hosted" role="tabpanel" data-tab="self-hosted" aria-hidden="true" hidden="hidden">
+
+<p>For self-hosted parallel jobs, you can register any number of <a href="../agents/agents?view=azure-devops" data-linktype="relative-path">self-hosted agents</a> in your organization. We charge based on the number of jobs you want to run at a time, not the number of agents registered. There are no time limits on self-hosted jobs.</p>
+<p>For public projects that are self-hosted, you can have unlimited parallel jobs running. For private projects, you can have one job plus one job for each active Visual Studio Enterprise subscriber who is a member of your organization.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th>Number of parallel jobs</th>
+<th>Time limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Public project</strong></td>
+<td>Unlimited</td>
+<td>None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Private project</strong></td>
+<td>One self-hosted job plus one parallel job for each active Visual Studio Enterprise subscriber who is a member of your organization.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>When the free tier is no longer sufficient for your self-hosted private project, you can purchase more capacity per parallel job. For pricing cost per parallel job, see the <a href="https://azure.microsoft.com/pricing/details/devops/azure-devops-services/" data-linktype="external">Azure DevOps pricing page</a>.</p>
+<p><a href="#how-do-i-buy-more-parallel-jobs" data-linktype="self-bookmark">Buy self-hosted parallel jobs</a>.</p>
+</section>
+</div>
+</div>
+<div data-moniker="azure-devops">
+<h2 id="how-many-parallel-jobs-do-i-need">How many parallel jobs do I need?</h2>
+<p>As the number of queued builds and releases exceeds the number of parallel jobs you have, your build and release queues grow longer. When you find the queue delays are too long, you can purchase more parallel jobs as needed. There are several methods you can use to check your parallel job limits and job history.</p>
+<h3 id="view-job-history-using-the-pool-consumption-report">View job history using the pool consumption report</h3>
+<p>You can use the <strong>Pool consumption report</strong>, available on the <strong>Analytics</strong> tab of your agent pool, to see a chart of running and queued jobs graphed with your parallel jobs for the previous 30 days. If you have a backlog of queued jobs and your running jobs are at the concurrency limit, you might want to purchase more parallel jobs. For more information, see <a href="../agents/pool-consumption-report?view=azure-devops" data-linktype="relative-path">Pool consumption report</a>.</p>
+<p><span class="mx-imgBorder">
+<img src="../agents/media/pool-consumption-report/historical-graph-azure-pipelines.png?view=azure-devops" alt="Microsoft-hosted agent pool historical graph" data-linktype="relative-path">
+</span>
+</p>
+<h3 id="check-the-parallel-jobs-setting-directly">Check the parallel jobs setting directly</h3>
+<p>Figure out how many parallel jobs you need by first seeing how many parallel jobs your organization currently uses:</p>
+<ol>
+<li><p>Browse to <strong>Organization settings</strong> &gt; <strong>Pipelines</strong> &gt; <strong>Parallel jobs</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="media/concurrent-pipelines-vsts/control-panel-account-build-and-release-resource-limits.png?view=azure-devops" alt="Location of parallel jobs in organization settings." data-linktype="relative-path">
+</span>
+</p>
+<p>URL example: <code>https://{Your_Organization}/_admin/_buildQueue?_a=resourceLimits</code></p>
+</li>
+<li><p>View the maximum number of parallel jobs that are available in your organization.</p>
+</li>
+<li><p>Select <strong>View in-progress jobs</strong> to display all the builds and releases that are actively consuming an available parallel job or that are queued waiting for a parallel job to be available.</p>
+</li>
+</ol>
+<h3 id="estimate-costs">Estimate costs</h3>
+<p>A simple rule of thumb: Estimate that you need one parallel job for every four to five users in your organization.</p>
+<p>In the following scenarios, you might need multiple parallel jobs:</p>
+<ul>
+<li>If you have multiple teams, and if each of them require CI, you might need a parallel job for each team.</li>
+<li>If your CI trigger applies to multiple branches, you might need a parallel job for each active branch.</li>
+<li>If you develop multiple applications by using one organization or server, you might need more parallel jobs: one to deploy each application at the same time.</li>
+</ul>
+</div>
+<div data-moniker="azure-devops">
+<h2 id="how-do-i-buy-more-parallel-jobs">How do I buy more parallel jobs?</h2>
+<p>To buy more parallel jobs:</p>
+<ul>
+<li><a href="../../organizations/billing/set-up-billing-for-your-organization-vs?view=azure-devops#set-up-billing" data-linktype="relative-path">Billing must be set up for your organization</a></li>
+<li>You need to be a member of the <a href="../../organizations/security/look-up-project-collection-administrators?view=azure-devops" data-linktype="relative-path"><strong>Project Collection Administrators</strong> group</a>.</li>
+</ul>
+<h3 id="buy-parallel-jobs">Buy parallel jobs</h3>
+<p>Buy more parallel jobs within your organization settings:</p>
+<ol>
+<li><p>Sign in to your organization (<code>https://dev.azure.com/{yourorganization}</code>).</p>
+</li>
+<li><p>Select <img src="../../media/icons/gear-icon.png?view=azure-devops" alt="gear icon" data-linktype="relative-path"> <strong>Organization settings</strong>.</p>
+<p><img src="../../media/settings/open-admin-settings-vert.png?view=azure-devops" alt="Open Organization settings" data-linktype="relative-path"></p>
+</li>
+<li><p>Select <strong>Parallel jobs</strong> under Pipelines, and then select either <strong>Purchase parallel jobs</strong> or <strong>Change</strong> for Microsoft-hosted jobs or <strong>Change</strong> for self-hosted jobs.</p>
+<p><span class="mx-imgBorder">
+<img src="../../organizations/billing/media/shared/manage-parallel-jobs.png?view=azure-devops" alt="manage parallel jobs image" data-linktype="relative-path">
+</span>
+</p>
+</li>
+<li><p>Enter your desired amount, and then <strong>Save</strong>.</p>
+</li>
+<li><p>It might take up to 30 minutes for your parallel jobs to become available to use.</p>
+</li>
+</ol>
+<p>For pricing cost per parallel job, see the <a href="https://azure.microsoft.com/pricing/details/devops/azure-devops-services/" data-linktype="external">Azure DevOps pricing page</a>.</p>
+<h2 id="how-do-i-change-the-quantity-of-parallel-jobs-for-my-organization">How do I change the quantity of parallel jobs for my organization?</h2>
+<ol>
+<li><p>Sign in to your organization (<code>https://dev.azure.com/{yourorganization}</code>).</p>
+</li>
+<li><p>Select <img src="../../media/icons/gear-icon.png?view=azure-devops" alt="gear icon" data-linktype="relative-path"> <strong>Organization settings</strong>.</p>
+<p><img src="../../media/settings/open-admin-settings-vert.png?view=azure-devops" alt="Open Organization settings" data-linktype="relative-path"></p>
+</li>
+<li><p>Select <strong>Parallel jobs</strong> under Pipelines, and then select either <strong>Purchase parallel jobs</strong> or <strong>Change</strong> for Microsoft-hosted jobs or <strong>Change</strong> for self-hosted jobs.</p>
+<p><span class="mx-imgBorder">
+<img src="../../organizations/billing/media/shared/manage-parallel-jobs.png?view=azure-devops" alt="image of manage parallel jobs" data-linktype="relative-path">
+</span>
+</p>
+</li>
+<li><p>Enter a lesser or greater quantity of Microsoft-hosted or self-hosted jobs, and then select <strong>Save</strong>.</p>
+</li>
+<li><p>It might take up to 30 minutes for the new number of parallel jobs to become active.</p>
+</li>
+</ol>
+</div>
+<div data-moniker="azure-devops">
+<h2 id="how-is-a-parallel-job-consumed-in-devops-services">How is a parallel job consumed in DevOps Services?</h2>
+<p>Consider an organization that has only one Microsoft-hosted parallel job. This job allows users in that organization to collectively run only one job at a time. When more jobs are triggered, they're queued until previous jobs finish.</p>
+<p>If you use release or YAML pipelines, then a run consumes a parallel job only when it's being actively deployed to a stage. While the release is waiting for an approval or a manual intervention, it doesn't consume a parallel job.</p>
+<p>When you run a <a href="../process/phases?view=azure-devops#server-jobs" data-linktype="relative-path">server job</a> or deploy to a <a href="../process/deployment-group-phases?view=azure-devops" data-linktype="relative-path">deployment group</a> using release pipelines, you don't consume any parallel jobs.</p>
+<p><img src="media/concurrent-pipelines-vsts/concurrent-pipelines-simple-example.png?view=azure-devops" alt="Simple example of parallel jobs" data-linktype="relative-path"></p>
+<ol>
+<li>FabrikamFiber CI Build 102 (main branch) starts first.</li>
+<li>Deployment of FabrikamFiber Release 11 gets triggered by completion of FabrikamFiber CI Build 102.</li>
+<li>FabrikamFiber CI Build 101 (feature branch) is triggered. The build can't start yet because Release 11's deployment is active. So the build stays queued.</li>
+<li>Release 11 waits for approvals. Fabrikam CI Build 101 starts because a release that's waiting for approvals doesn't consume a parallel job.</li>
+<li>Release 11 is approved. It resumes only after Fabrikam CI Build 101 is completed.</li>
+</ol>
+</div>
+<div data-moniker="azure-devops">
+<h2 id="faq">FAQ</h2>
+</div>
+<div data-moniker="azure-devops">
+<h3 id="how-do-i-qualify-for-the-free-tier-of-public-projects">How do I qualify for the free tier of public projects?</h3>
+<p>You qualify for the free tier limits for public projects if you meet both of these conditions:</p>
+<ul>
+<li>Your pipeline is part of an Azure Pipelines <a href="../../organizations/projects/about-projects?view=azure-devops" data-linktype="relative-path">public project</a>.</li>
+<li>Your pipeline builds a public repository from GitHub or from the same public project in your Azure DevOps organization.</li>
+</ul>
+<p>For information on how to apply for the grant of free parallel jobs, see <a href="concurrent-jobs?view=azure-devops&amp;tabs=ms-hosted#how-much-do-parallel-jobs-cost" data-linktype="relative-path">How much do parallel jobs cost (Microsoft-hosted)?</a></p>
+<h3 id="can-i-assign-a-parallel-job-to-a-specific-project-or-agent-pool">Can I assign a parallel job to a specific project or agent pool?</h3>
+<p>Currently, there isn't a way to partition or dedicate parallel job capacity to a specific project or agent pool. For example:</p>
+<ul>
+<li>You purchase two parallel jobs in your organization.</li>
+<li>You start two runs in the first project, and both the parallel jobs are consumed.</li>
+<li>You start a run in the second project. That run doesn't start until one of the runs in your first project is completed.</li>
+</ul>
+<h3 id="are-there-limits-on-who-can-use-azure-pipelines">Are there limits on who can use Azure Pipelines?</h3>
+<p>You can have as many users as you want when you're using Azure Pipelines. There's no per-user charge for using Azure Pipelines. Users with both <a href="../../organizations/security/access-levels?view=azure-devops" data-linktype="relative-path">basic and stakeholder access</a> can author as many builds and releases as they want.</p>
+<h3 id="are-there-any-limits-on-the-number-of-builds-and-release-pipelines-that-i-can-create">Are there any limits on the number of builds and release pipelines that I can create?</h3>
+<p>No. You can create hundreds or even thousands of pipelines for no charge. You can register any number of self-hosted agents for no charge.</p>
+<h3 id="what-about-the-option-to-pay-for-hosted-agents-by-the-minute">What about the option to pay for hosted agents by the minute?</h3>
+<p>Some of our earlier customers are still on a per-minute plan for the hosted agents. In this plan, you pay $0.05/minute for the first 20 hours after the free tier, and $0.01/minute after 20 hours. Because of the following limitations in this plan, you might want to consider moving to the parallel jobs model:</p>
+<ul>
+<li>When you're using the per-minute plan, you can run only one job at a time.</li>
+<li>When you run builds for more than 14 paid hours in a month, the per-minute plan might be less cost-effective than the parallel jobs model.</li>
+</ul>
+<h3 id="i-use-xaml-build-controllers-with-my-organization-how-am-i-charged-for-them">I use XAML build controllers with my organization. How am I charged for them?</h3>
+<p>You can register one XAML build controller for each self-hosted parallel job in your organization.
+Your organization gets at least one free self-hosted parallel job, so you can register one XAML build controller for no extra charge.
+For each additional XAML build controller, you need an additional self-hosted parallel job.</p>
+</div>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../../organizations/billing/set-up-billing-for-your-organization-vs?view=azure-devops#set-up-billing" data-linktype="relative-path">Set up billing</a></li>
+<li><a href="../../organizations/billing/buy-basic-access-add-users?view=azure-devops" data-linktype="relative-path">Manage paid access</a></li>
+<li><a href="../../organizations/billing/buy-access-tfs-test-hub?view=azure-devops" data-linktype="relative-path">Buy access to test hub</a></li>
+<li><a href="../../organizations/billing/set-up-billing-for-your-organization-vs?view=azure-devops#give-a-user-access-to-manage-billing" data-linktype="relative-path">Add user for billing management</a></li>
+<li><a href="../../organizations/billing/overview?view=azure-devops" data-linktype="relative-path">Azure DevOps billing overview</a></li>
+</ul>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="This article is not helpful"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Need help with this topic?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Want to try using Ask Learn to clarify or guide you through this topic?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				Additional resources
+			</h2>
+			
+		<section
+			id="right-rail-recommendations-mobile"
+			class=""
+			data-bi-name="recommendations"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-qna-mobile"
+			class="margin-top-xxs"
+			data-bi-name="qna-link-card"
+			hidden
+		></section>
+	
+		</div>
+	 
+		<div
+			id="article-metadata-footer"
+			data-bi-name="article-metadata-footer"
+			data-test-id="article-metadata-footer"
+			class="page-metadata-container"
+		>
+			<hr class="hr" />
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+				<li class="visibility-hidden-visual-diff">
+			<span class="badge badge-sm text-wrap-pretty">
+				<span>Last updated on <local-time format="twoDigitNumeric"
+		datetime="2025-04-17T14:39:00.000Z"
+		data-article-date-source="calculated"
+		class="is-invisible"
+	>
+		2025-04-17
+	</local-time></span>
+			</span>
+		</li>
+			</ul>
+		</div>
+	
+			</div>
+			
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside "
+					data-bi-name="aside"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+			role="complementary"
+			aria-label="Additional resources"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<p class="font-weight-semibold margin-bottom-xs">Was this page helpful?</p>
+			<div class="buttons">
+				<button
+					class="thumb-rating-button like button button-primary button-sm"
+					data-test-id="right-rail-rating-yes"
+					data-binary-rating-response="rating-yes"
+					type="button"
+					title="This article is helpful"
+					data-bi-name="button-rating-yes"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-like"></span>
+					</span>
+					<span>Yes</span>
+				</button>
+				<button
+					class="thumb-rating-button dislike button button-primary button-sm"
+					id="right-rail-no-button"
+					hidden
+					data-test-id="right-rail-rating-no"
+					data-binary-rating-response="rating-no"
+					type="button"
+					title="This article is not helpful"
+					data-bi-name="button-rating-no"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-dislike"></span>
+					</span>
+					<span>No</span>
+				</button>
+				<details class="popover popover-right" id="help-popover" data-test-id="feedback-popover">
+					<summary
+						tabindex="0"
+						class="thumb-rating-button dislike button button-primary button-sm"
+						data-test-id="details-right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+						data-bi-an="feedback-unhelpful-popover"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</summary>
+					<div
+						class="popover-content width-200 width-300-tablet"
+						role="dialog"
+						aria-labelledby="popover-heading"
+						aria-describedby="popover-description"
+					>
+						<p
+							id="popover-heading-right-rail"
+							class="font-size-lg margin-bottom-xxs font-weight-semibold"
+						>
+							Need help with this topic?
+						</p>
+						<p id="popover-description-right-rail" class="font-size-sm margin-bottom-xs">
+							Want to try using Ask Learn to clarify or guide you through this topic?
+						</p>
+						
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Suggest a fix? </span>
+			</button>
+		</div>
+	
+					</div>
+				</details>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout has-padding has-default-focus border-top  uhf-container"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	 <div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-expanded="false"
+				title="Theme"
+				data-bi-name="theme"
+			>
+				<span class="icon">
+					<span class="docon docon-sun" aria-hidden="true"></span>
+				</span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu">
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="light"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="dark"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="high-contrast"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2025</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>

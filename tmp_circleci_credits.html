@@ -1,0 +1,3555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Using credits :: CircleCI Documentation</title>
+    <link rel="canonical" href="https://circleci.com/docs/guides/plans-pricing/credits/">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a28b71f3-4d2e-4eac-93bc-34929948dd7d" data-blockingmode="auto" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script>
+        !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="mAJ9W2SwLHgmJtFkpaXWCbwEeNk9D8CZ";;analytics.SNIPPET_VERSION="5.2.1";
+        analytics.load("mAJ9W2SwLHgmJtFkpaXWCbwEeNk9D8CZ");
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const pathName = window.location.pathname.replace("docs/", "");
+        analytics.track("dd_docs_page", {
+            fullPath: pathName,
+            has2dot0: pathName.includes("2.0/"),
+            fbclid: urlSearchParams.get("fbclid"),
+            gclid: urlSearchParams.get("gclid"),
+            action: "viewed",
+            orgId: Cookies.get("cci-org-analytics-id") || null,
+            page: pathName == "/" ? "homepage" : pathName,
+            hash: window.location.hash ? window.location.hash.replace("#", "") : null,
+            locale: "en",
+            desktop: window.innerWidth >= 1200,
+        })
+        }}();
+    </script>
+<script defer src="https://widget.kapa.ai/kapa-widget.bundle.js" data-website-id="06cd008c-32ae-46d3-946b-211d1afd443c" data-project-name="CircleCI" data-project-color="#161616" data-project-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI7jLeuu2k66svJDmHxYKlP7Ysf7FvNbkuvzAhHEPCsvLbhcpVRnoJCm538OSv6o5uzlQ&usqp=CAU"
+></script>
+<!-- Hotjar Tracking Code for www.circleci.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:413720,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+  </head>
+  <body class="article tracking-normal leading-5 text-[16px]">
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs'; mermaid.initialize({"startOnLoad":true,"theme":"base","securityLevel":"loose","themeVariables":{"primaryColor":"#E3F5E5","background":"#E3F5E5","lineColor":"#B4B8C6","primaryBorderColor":"#008542","primaryTextColor":"#00381A"}});</script><header class="flex flex-col max-w-full px-[32px] md:px-9 pt-6 border-b border-vapor bg-white sticky top-0 z-10">
+  <div class="flex items-center justify-between mb-7">
+    <!-- Logo + Title -->
+    <div class="flex items-center space-x-2">
+      <a href="../../../">
+        <img src="../../../_/img/logo.svg" alt="CircleCI Logo" class="h-[44px]">
+      </a>
+    </div>
+
+    <!-- Search Bar -->
+
+    <div class="hidden md:block flex-1 md:px-4">
+  <div class="relative w-full max-w-[888px] mx-auto">
+    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+      <img class="w-4 h-4" src="../../../_/img/search.svg" alt="Search Icon">
+    </span>
+    <input
+      type="text"
+      id="search-text-input"
+      data-search-input
+      placeholder="Search Docs"
+      class="w-full py-2 pl-8 pr-4 border rounded-full border-vapor focus:outline-none focus:ring-2 focus:ring-vapor focus:border-transparent"
+    >
+    <button data-search-clear class="absolute inset-y-0 right-5 flex items-center gap-2 pl-3 text-link-on-light">
+      Clear
+      <img class="w-3 h-3" src="../../../_/img/close.svg" alt="Search Icon">
+    </button>
+  </div>
+</div>
+
+    <!-- Localization + CTA -->
+
+    <div class="flex items-center space-x-4 ml-2">
+      <!--<img src="../../../_/img/language-icon.svg" alt="Language Icon" class="h-5 w-5">-->
+      <img data-page-navigation-toggle src="../../../_/img/nav-menu.svg" alt="Navigation Menu Icon" class="h-5 w-5 lg:hidden">
+      <a href="https://app.circleci.com/" class="hidden md:block bg-slime-green text-dark-green rounded-full px-[16px] border py-[8px] border-operational-green font-medium">
+        Go to Application
+      </a>
+    </div>
+  </div>
+
+  <!-- Components Nav -->
+
+  <nav data-component-explorer-nav class="flex flex-col md:flex-row md:items-center justify-between text-terminal-black font-medium md:font-normal hidden md:flex overflow-x-auto whitespace-nowrap gap-3">
+
+  <ul class="flex flex-col md:flex-row md:space-x-8">
+      <li class="flex items-center mr-2">
+        <a href="../../../" class="inline-block px-2 py-2 md:py-3  ">
+          Home
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../getting-started/first-steps/" class="inline-block px-2 py-2 md:py-3  text-accent-green md:text-inherit border-l-2 md:border-l-0 md:border-b-2 border-accent-green font-semibold  ">
+          Guides
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../reference/configuration-reference/" class="inline-block px-2 py-2 md:py-3  ">
+          Reference
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../server-admin/latest/overview/circleci-server-overview/" class="inline-block px-2 py-2 md:py-3  ">
+          Server
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../orbs/use/orb-intro/" class="inline-block px-2 py-2 md:py-3  ">
+          Orbs
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../contributors/docs-style/" class="inline-block px-2 py-2 md:py-3  ">
+          Contributors
+        </a>
+      </li>
+  </ul>
+
+  <ul class="flex flex-col ml-2 mt-10 md:mt-0 md:ml-0 md:flex-row gap-2">
+    <li class="flex items-center">
+      <a href="https://circleci.com/developer/" class="inline-block md:px-2 md:py-3">
+        Dev Hub
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="../../../reference/api-homepage/" class="inline-block md:px-2 md:py-3">
+        API
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="https://support.circleci.com/hc/en-us/" class="inline-block md:px-2 md:py-3">
+        Support
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="https://discuss.circleci.com/" class="inline-block md:px-2 md:py-3">
+        Discuss
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="https://circleci.com/" class="inline-block md:px-2 md:py-3">
+        CircleCI.com
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+  </ul>
+</nav>
+
+  <div data-search-results-container class="flex flex-col md:flex-row gap-4 md:gap-8 hidden flex-1 pt-6 overflow-auto bg-white">
+  <nav data-search-result-paths>
+    <ul class="flex md:flex-col gap-2 px-2 overflow-x-scroll md:overflow-x-hidden">
+      <li data-search-result-path-group>
+        <button class="flex-0 flex gap-2 px-3 py-2 border-b-2 border-accent-green md:border md:border-link-on-light md:rounded-full whitespace-nowrap min-w-fit">
+          <p>[path]</p>
+          <span class="text-[10px] border rounded-full py-1 px-1.5">[numberOfHits]</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <div class="flex-1 max-w-[800px]">
+    <div data-results-current-path class="hidden md:flex gap-2 mb-6 items-center">
+      <h2 class="font-medium text-[24px]">[path]</h2>
+      <span class="text-[10px] border rounded-full py-1 px-1.5">[numberOfHits]</span>
+    </div>
+    <div data-search-results class="flex flex-col gap-4">
+      <a data-search-result class="flex flex-col gap-2 hover:bg-inline-grey rounded-xl py-2 px-0 md:px-3" href="[url]">
+        <h3 class="text-[20px] font-medium">[title]</h3>
+        <p>[content]</p>
+      </a>
+    </div>
+    <div class="flex gap-2 py-4 justify-center md:justify-start">
+      <button data-search-result-prev class="flex items-center">
+        <svg width="16" height="12" viewBox="0 0 16 12" class="inline-block text-disabled-element group-hover:stroke-inherit" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 5.29289C-0.0976311 5.68342 -0.0976311 6.31658 0.292893 6.70711L5.29289 11.7071C5.68342 12.0976 6.31658 12.0976 6.70711 11.7071C7.09763 11.3166 7.09763 10.6834 6.70711 10.2929L3.41421 7H15C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5H3.41421L6.70711 1.70711C7.09763 1.31658 7.09763 0.683417 6.70711 0.292894C6.31658 -0.0976312 5.68342 -0.0976312 5.29289 0.292894L0.292893 5.29289Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div data-search-result-pagination class="flex items-center justify-between gap-2">
+        <button class="bg-link-on-light px-[20px] py-[10px] rounded-full text-white">1</button>
+        <button class="p-4 rounded-full">2</button>
+        <span class="p-4 rounded-full">...</span>
+        <button class="p-4 rounded-full">12</button>
+      </div>
+      <button data-search-result-next class="flex items-center">
+        <svg width="16" height="12" viewBox="0 0 16 12" class="inline-block rotate-180 text-link-on-light group-hover:stroke-inherit" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 5.29289C-0.0976311 5.68342 -0.0976311 6.31658 0.292893 6.70711L5.29289 11.7071C5.68342 12.0976 6.31658 12.0976 6.70711 11.7071C7.09763 11.3166 7.09763 10.6834 6.70711 10.2929L3.41421 7H15C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5H3.41421L6.70711 1.70711C7.09763 1.31658 7.09763 0.683417 6.70711 0.292894C6.31658 -0.0976312 5.68342 -0.0976312 5.29289 0.292894L0.292893 5.29289Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+</header>
+<div class="flex h-full w-full">
+<div data-page-navigation class="w-full lg:w-2/6 flex-initial lg:max-w-[420px] lg:min-w-[360px] h-full border-r border-vapor fixed lg:sticky inset-0 lg:top-0 lg:h-screen transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 lg:z-auto bg-white"  data-tcomponent="guides" data-tversion="">
+  <aside class="relative h-full py-6 px-9 overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-xl scrollbar-thumb-fog scrollbar-track-vapor scrollbar-track-border">
+    <div class="flex items-center justify-between lg:hidden text-terminal-black mb-10">
+      <img data-page-navigation-back-button src="../../../_/img/arrow-back.svg" alt="Arrow Back" class="invisible lg:hidden h-4 w-4">
+      <h3 class="font-medium"> Guides</h3>
+      <img data-page-navigation-toggle src="../../../_/img/close.svg" alt="Close Navigation" class="h-4 w-4">
+    </div>
+    <div class="md:hidden mb-12">
+  <div class="relative w-full max-w-[888px] mx-auto">
+    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+      <img class="w-4 h-4" src="../../../_/img/search.svg" alt="Search Icon">
+    </span>
+    <input
+      type="text"
+      id="search-text-input"
+      data-search-input
+      placeholder="Search Docs"
+      class="w-full py-2 pl-8 pr-4 border rounded-full border-vapor focus:outline-none focus:ring-2 focus:ring-vapor focus:border-transparent"
+    >
+    <button data-search-clear class="absolute inset-y-0 right-5 flex items-center gap-2 pl-3 text-link-on-light">
+      Clear
+      <img class="w-3 h-3" src="../../../_/img/close.svg" alt="Search Icon">
+    </button>
+  </div>
+</div>
+    <div data-search-results-container class="flex flex-col md:flex-row gap-4 md:gap-8 hidden">
+  <nav data-search-result-paths>
+    <ul class="flex md:flex-col gap-2 px-2 overflow-x-scroll md:overflow-x-hidden">
+      <li data-search-result-path-group>
+        <button class="flex-0 flex gap-2 px-3 py-2 border-b-2 border-accent-green md:border md:border-link-on-light md:rounded-full whitespace-nowrap min-w-fit">
+          <p>[path]</p>
+          <span class="text-[10px] border rounded-full py-1 px-1.5">[numberOfHits]</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <div class="flex-1 max-w-[800px]">
+    <div data-results-current-path class="hidden md:flex gap-2 mb-6 items-center">
+      <h2 class="font-medium text-[24px]">[path]</h2>
+      <span class="text-[10px] border rounded-full py-1 px-1.5">[numberOfHits]</span>
+    </div>
+    <div data-search-results class="flex flex-col gap-4">
+      <a data-search-result class="flex flex-col gap-2 hover:bg-inline-grey rounded-xl py-2 px-0 md:px-3" href="[url]">
+        <h3 class="text-[20px] font-medium">[title]</h3>
+        <p>[content]</p>
+      </a>
+    </div>
+    <div class="flex gap-2 py-4 justify-center md:justify-start">
+      <button data-search-result-prev class="flex items-center">
+        <svg width="16" height="12" viewBox="0 0 16 12" class="inline-block text-disabled-element group-hover:stroke-inherit" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 5.29289C-0.0976311 5.68342 -0.0976311 6.31658 0.292893 6.70711L5.29289 11.7071C5.68342 12.0976 6.31658 12.0976 6.70711 11.7071C7.09763 11.3166 7.09763 10.6834 6.70711 10.2929L3.41421 7H15C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5H3.41421L6.70711 1.70711C7.09763 1.31658 7.09763 0.683417 6.70711 0.292894C6.31658 -0.0976312 5.68342 -0.0976312 5.29289 0.292894L0.292893 5.29289Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div data-search-result-pagination class="flex items-center justify-between gap-2">
+        <button class="bg-link-on-light px-[20px] py-[10px] rounded-full text-white">1</button>
+        <button class="p-4 rounded-full">2</button>
+        <span class="p-4 rounded-full">...</span>
+        <button class="p-4 rounded-full">12</button>
+      </div>
+      <button data-search-result-next class="flex items-center">
+        <svg width="16" height="12" viewBox="0 0 16 12" class="inline-block rotate-180 text-link-on-light group-hover:stroke-inherit" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 5.29289C-0.0976311 5.68342 -0.0976311 6.31658 0.292893 6.70711L5.29289 11.7071C5.68342 12.0976 6.31658 12.0976 6.70711 11.7071C7.09763 11.3166 7.09763 10.6834 6.70711 10.2929L3.41421 7H15C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5H3.41421L6.70711 1.70711C7.09763 1.31658 7.09763 0.683417 6.70711 0.292894C6.31658 -0.0976312 5.68342 -0.0976312 5.29289 0.292894L0.292893 5.29289Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>    <nav data-component-explorer-nav class="flex flex-col md:flex-row md:items-center justify-between text-terminal-black font-medium md:font-normal hidden overflow-x-auto whitespace-nowrap gap-3">
+
+  <ul class="flex flex-col md:flex-row md:space-x-8">
+      <li class="flex items-center mr-2">
+        <a href="../../../" class="inline-block px-2 py-2 md:py-3  ">
+          Home
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../getting-started/first-steps/" class="inline-block px-2 py-2 md:py-3  text-accent-green md:text-inherit border-l-2 md:border-l-0 md:border-b-2 border-accent-green font-semibold  ">
+          Guides
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../reference/configuration-reference/" class="inline-block px-2 py-2 md:py-3  ">
+          Reference
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../server-admin/latest/overview/circleci-server-overview/" class="inline-block px-2 py-2 md:py-3  ">
+          Server
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../orbs/use/orb-intro/" class="inline-block px-2 py-2 md:py-3  ">
+          Orbs
+        </a>
+      </li>
+      <li class="flex items-center mr-2">
+        <a href="../../../contributors/docs-style/" class="inline-block px-2 py-2 md:py-3  ">
+          Contributors
+        </a>
+      </li>
+  </ul>
+
+  <ul class="flex flex-col ml-2 mt-10 md:mt-0 md:ml-0 md:flex-row gap-2">
+    <li class="flex items-center">
+      <a href="https://circleci.com/developer/" class="inline-block md:px-2 md:py-3">
+        Dev Hub
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="../../../reference/api-homepage/" class="inline-block md:px-2 md:py-3">
+        API
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="https://support.circleci.com/hc/en-us/" class="inline-block md:px-2 md:py-3">
+        Support
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="https://discuss.circleci.com/" class="inline-block md:px-2 md:py-3">
+        Discuss
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+    <li class="flex items-center">
+      <a href="https://circleci.com/" class="inline-block md:px-2 md:py-3">
+        CircleCI.com
+      </a>
+      <img src="../../../_/img/link-arrow.svg" alt="Go to" class="md:hidden ml-2 inline-block w-[13px] h-[13px]">
+    </li>
+  </ul>
+</nav>
+    <div class="flex flex-col space-between">
+      <div data-left-side-nav-container>
+  <nav data-left-side-nav>
+        <ul class="text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="0" >
+  </li>
+  <li data-navigation-tree-children class="">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">About CircleCI</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../about-circleci/about-circleci/">CircleCI overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../about-circleci/benefits-of-circleci/">Benefits of CircleCI</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../about-circleci/concepts/">Concepts</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../about-circleci/introduction-to-the-circleci-web-app/">Intro to the CircleCI web app</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../about-circleci/open-source/">Open source acknowledgements</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Getting started</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">First steps</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/first-steps/">Sign up and try CircleCI</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/invite-your-team/">Join teammates on CircleCI</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/create-project/">Create a project</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/getting-started/">Quickstart guide</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/hello-world/">Hello World</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/introduction-to-yaml-configurations/">Intro to YAML configuration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/config-editor/">In-app config editor</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/language-javascript/">Node.js quickstart</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/language-python/">Python quickstart</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/language-go/">Go quickstart</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Tutorials</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/config-intro/">Configuration intro</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../getting-started/slack-orb-tutorial/">Use the Slack orb to set up notifications</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Migrate to CircleCI</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migration-intro/">Migration intro</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-aws/">Migrate from AWS</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-azuredevops/">Migrate from Azure DevOps</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-buildkite/">Migrate from Buildkite</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-github/">Migrate from GitHub</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-gitlab/">Migrate from GitLab</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-jenkins/">Migrate from Jenkins</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-teamcity/">Migrate from TeamCity</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../migrate/migrating-from-travis/">Migrate from Travis CI</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Orchestrate</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Pipelines</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/pipelines/">Pipeline overview and setup</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/jobs-steps/">Jobs and steps overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/workflows/">Workflow orchestration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/automatic-reruns/">Automatic reruns</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/workspaces/">Use workspaces to share data between jobs</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/dynamic-config/">Use dynamic configuration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/skip-build/">Skip CI and cancel workflows</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/controlling-serial-execution-across-your-organization/">Controlling serial execution across your organization</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/pipeline-variables/">Pipeline values and parameters</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Triggers</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/triggers-overview/">Trigger options</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/set-up-triggers/">Set up triggers</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/github-trigger-event-options/">GitHub trigger event options</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/gitlab-trigger-options/">GitLab trigger options</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/custom-webhooks/">Custom webhooks</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/schedule-triggers/">Schedule triggers</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/orchestration-cookbook/">Orchestration cookbook</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/how-to-override-config/">How to override config</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/set-up-multiple-configuration-files-for-a-project/">Set up multiple configuration files for a project</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/notify-a-slack-channel-of-a-paused-workflow/">Notify a Slack channel of a paused workflow</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/using-branch-filters/">Using branch filters</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/selecting-a-workflow-to-run-using-pipeline-parameters/">Select a workflow to run using pipeline parameters</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/migrate-scheduled-workflows-to-schedule-triggers/">Migrate scheduled workflows to schedule triggers</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/schedule-triggers-with-multiple-workflows/">Schedule triggers with multiple workflows</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/set-a-nightly-schedule-trigger/">Set a nightly schedule trigger</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/using-dynamic-configuration/">Using dynamic configuration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/databases/">Configure databases</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/migrate-from-deploy-to-run/">Migrate from deploy to run</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/using-shell-scripts/">Using shell scripts</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Execute on managed compute</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/executor-intro/">Execution environments overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/resource-class-overview/">Resource class overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Docker</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/using-docker/">Using Docker</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/circleci-images/">Convenience images</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/next-gen-migration-guide/">Migrating to next-gen images</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/custom-images/">Using custom-built Docker images</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/private-images/">Docker authenticated pulls</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/building-docker-images/">Running Docker commands</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Linux VM</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/using-linuxvm/">Using the Linux VM execution environment</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/android-machine-image/">Using Android images with the machine executor</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">macOS</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/using-macos/">Using the macOS execution environment</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/hello-world-macos/">Configuring a macOS app</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/ios-codesigning/">iOS code signing</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Windows</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/using-windows/">Using the Windows execution environment</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/hello-world-windows/">Hello world Windows</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Arm</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/using-arm/">Using the Arm VM execution environment</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">GPU</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/using-gpu/">Using the GPU execution environment</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/pull-an-image-from-aws-ecr-with-oidc/">Pull an image from AWS ECR with OIDC</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/run-a-job-in-a-container/">Run a job in a container on your machine with Docker</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/docker-compose/">Installing and using Docker Compose</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/high-uid-error/">Debugging container ID cannot be mapped to host ID error</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/docker-to-machine/">Migrating between the Docker machine executors</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Image support policies</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/android-images-support-policy/">Android images support policy</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/convenience-images-support-policy/">Convenience images support policy</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/linux-vm-support-policy/">Linux VM images support policy</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/linux-cuda-images-support-policy/">Linux CUDA images support policy</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/remote-docker-images-support-policy/">Remote Docker images support policy</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/windows-images-support-policy/">Windows images support policy</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/xcode-policy/">Xcode image policy</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/machine-convenience-image-lifecycle/">CircleCI image lifecycle: A complete guide</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Execute jobs on self-hosted runners</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-overview/">Self-hosted runner overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-concepts/">Self-hosted runner concepts</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-feature-comparison-matrix/">Runner feature comparison matrix</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Container runner</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/container-runner-installation/">Container runner installation</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/container-runner-performance-benchmarks/">Container runner performance benchmarks</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/container-runner/">Container runner reference</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Machine runner 3</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/install-machine-runner-3-on-linux/">Install machine runner 3 on Linux</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/install-machine-runner-3-on-macos/">Install machine runner 3 on macOS</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/install-machine-runner-3-on-windows/">Install machine runner 3 on Windows</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/install-machine-runner-3-on-docker/">Install machine runner 3 on Docker</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/machine-runner-3-manual-installation/">Manual install on Linux and macOS</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/machine-runner-3-manual-installation-on-windows/">Manual install on Windows</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/migrate-from-launch-agent-to-machine-runner-3-on-linux/">Migrate from launch agent to machine runner 3 on Linux</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/migrate-from-launch-agent-to-machine-runner-3-on-macos/">Migrate from launch agent to machine runner 3 on macOS</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/migrate-from-launch-agent-to-machine-runner-3-on-windows/">Migrate from launch agent to machine runner 3 on Windows</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/machine-runner-3-configuration-reference/">Machine runner 3 configuration reference</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Machine runner</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-installation-linux/">Linux installation</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-installation-windows/">Windows installation</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-installation-mac/">macOS installation</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-installation-docker/">Docker installation</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-config-reference/">Machine runner configuration reference</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-upgrading-on-server/">Upgrade machine runner on server</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Self-hosted runner reference</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-api/">Self-hosted runner API</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-faqs/">Self-hosted runner FAQ</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/troubleshoot-self-hosted-runner/">Troubleshoot self-hosted runner</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-runner/runner-scaling/">Scaling self-hosted runner</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Testing on CircleCI</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Run tests on CircleCI</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/test/">Automated testing</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/collect-test-data/">Collecting test data</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../insights/insights-tests/">Test Insights</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Manage and optimize tests</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/fix-flaky-tests/">Fix flaky tests</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Testing strategies</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/testing-llm-enabled-applications-through-evaluations/">Testing LLM-enabled applications through evaluations</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/browser-testing/">Browser testing</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/code-coverage/">Generate code coverage metrics</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/rerun-failed-tests/">Re-run failed tests overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/parallelism-faster-jobs/">Test splitting and parallelism</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Tutorials</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/test-splitting-tutorial/">Speed up pipelines with test splitting</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/testing-ios/">Testing iOS applications</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/testing-macos/">Testing macOS applications</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/use-the-circleci-cli-to-split-tests/">Use the environment CLI to split tests</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/automate-llm-evaluation-testing-with-the-circleci-evals-orb/">Automate LLM evaluation testing with the CircleCI Evals orb</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Reference</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/troubleshoot-test-splitting/">Troubleshoot test splitting</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Deploy with CircleCI</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deployment-overview/">Deployment and deploy management</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Setup</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/configure-deploy-markers/">Configure deploy markers</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/set-up-rollbacks/">Rollback a deployment</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Release agent setup</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/release-agent-overview/">Release agent overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/set-up-the-circleci-release-agent/">Set up the CircleCI release agent</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/configure-your-kubernetes-components/">Configure your Kubernetes components</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/update-the-kubernetes-release-agent/">Update the Kubernetes release agent</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/manage-releases/">Manage releases</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-android-applications/">Deploy Android applications</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-artifactory/">Deploy to Artifactory</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-aws/">Deploy to AWS</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/ecs-ecr/">Push image to ECR and deploy to ECS</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-service-update-to-aws-ecs/">Deploy service update to AWS ECS</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-azure-container-registry/">Deploy to Azure Container Registry</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-capistrano/">Deploy to Capistrano</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-cloud-foundry/">Deploy to Cloud Foundry</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-firebase/">Deploy to Firebase</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-google-cloud-platform/">Deploy to Google Cloud Platform</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-heroku/">Deploy to Heroku</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-ios-applications/">Deploy iOS applications</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-over-ssh/">Deploy over SSH</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/publish-packages-to-packagecloud/">Publish packages to Packagecloud</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../deploy/deploy-to-npm-registry/">Deploy to npm registry</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Optimize</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/optimizations/">Optimizations reference</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Data</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/persist-data/">Persisting data overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/caching/">Caching dependencies</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/caching-strategy/">Caching strategies</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/artifacts/">Store build artifacts</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Speed</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/concurrency/">Concurrency</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/parallelism-faster-jobs/">Test splitting and parallelism</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/docker-layer-caching/">Docker layer caching overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Config</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/dynamic-config/">Dynamic configuration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Tutorials</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../test/test-splitting-tutorial/">Speed up pipelines with test splitting</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/using-matrix-jobs/">Use matrix jobs</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../orchestrate/using-dynamic-configuration/">Using dynamic configuration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../optimize/java-oom/">Avoid and debug Java memory errors</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Insights</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../insights/insights/">Use Insights</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../insights/insights-tests/">Test Insights</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../insights/insights-snapshot-badge/">Generate an Insights snapshot badge</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../insights/insights-glossary/">Insights glossary</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Manage roles, permissions, and authentication</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Roles and permissions</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/roles-and-permissions-overview/">Roles and permissions overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/manage-roles-and-permissions/">Manage roles and permissions</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/manage-groups/">Manage groups</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../prevent-unregistered-users-from-spending-credits/">Prevent unregistered users from spending credits</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">SSO authentication</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/sso-overview/">SSO overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/set-up-sso/">SSO setup</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/sso-group-mapping/">Set up SSO group mapping with Okta</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/sign-in-to-an-sso-enabled-organization/">Sign in to an SSO-enabled org</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Multi-factor authentication (MFA)</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/mfa/">MFA overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">OIDC tokens</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/openid-connect-tokens/">Use OpenID Connect tokens in jobs</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../permissions-authentication/oidc-tokens-with-custom-claims/">OIDC tokens with custom claims</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Manage security and secrets</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Security features</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/security/">How CircleCI handles security</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/env-vars/">Intro to environment variables</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/contexts/">Using contexts</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/ip-ranges/">IP ranges</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/audit-logs/">Audit logs</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Security recommendations</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/security-overview/">Security overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/security-supply-chain/">Protecting against supply chain attacks</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/security-recommendations/">Secure secrets handling</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/set-environment-variable/">Set an environment variable</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/inject-environment-variables-with-api/">Inject environment variables with the API</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../execution-managed/ssh-access-jobs/">Debug with SSH</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/rotate-project-ssh-keys/">Rotate project SSH keys</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/stop-building-a-project-on-circleci/">Stop building a project on CircleCI</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/rename-organizations-and-repositories/">Rename organizations and repositories</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../security/delete-organizations-and-projects/">Delete organizations and projects</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Manage config policies</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../config-policies/config-policy-management-overview/">Config policy management overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../config-policies/config-policy-reference/">Config policy reference</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../config-policies/create-and-manage-config-policies/">Create and manage config policies</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../config-policies/test-config-policies/">Test config policies</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../config-policies/use-the-cli-for-config-and-policy-development/">Use the CLI for config and policy development</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../config-policies/config-policies-for-self-hosted-runner/">Config policies for self-hosted runner</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../config-policies/manage-contexts-with-config-policies/">Manage contexts with config policies</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Integration</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Integration features</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/outbound-webhooks/">Outbound webhooks</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../../reference/outbound-webhooks-reference/">Outbound webhooks reference</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/notifications/">Notifications</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">VCS integration</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/version-control-system-integration-overview/">VCS integration overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/github-apps-integration/">GitHub App integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/github-integration/">GitHub OAuth app integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/using-the-circleci-github-app-in-an-oauth-org/">Using the CircleCI GitHub App in an OAuth org</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/gitlab-integration/">GitLab integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/bitbucket-data-center-integration/">Bitbucket data center integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/bitbucket-integration/">Bitbucket Cloud integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/oss/">Build open source projects</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Third-party integrations</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/enable-checks/">Enable GitHub Checks</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/jira-plugin/">Connect with Jira</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/new-relic-integration/">New Relic integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/datadog-integration/">Datadog integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/sumo-logic-integration/">Sumo Logic integration</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">How-to guides</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/status-badges/">Adding status badges</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/webhooks-airtable/">CircleCI webhooks with Airtable</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/add-ssh-key/">Add additional SSH keys</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../integration/authorize-google-cloud-sdk/">Authorize Google Cloud SDK</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Developer toolkit</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/how-to-find-ids/">How to find IDs</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">AI features</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/chunk-setup-and-overview/">Chunk Setup and Overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/using-the-circleci-mcp-server/">Using the CircleCI MCP server</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/intelligent-summaries/">Intelligent summaries</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">CLI</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/environment-cli-usage-guide/">CircleCI environment CLI usage guide</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/local-cli/">Install and configure the CircleCI local CLI</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/how-to-use-the-circleci-local-cli/">How to use the CircleCI local CLI</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">APIs</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/api-intro/">API v2 intro</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/api-developers-guide/">API v2 developers guide</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/managing-api-tokens/">Managing API tokens</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">IDE tools</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/vs-code-extension-overview/">VS Code extension overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/get-started-with-the-vs-code-extension/">Get started with the VS Code extension</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Config tools</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/circleci-config-sdk/">Config SDK</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../../orbs/author/orb-development-kit/">Orb development kit</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/circleci-image-updater/">Image Updater</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform -rotate-90">
+          </button>
+          <span class="">Example projects and configs</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="hidden">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/examples-and-guides-overview/">Examples and guides overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/sample-config/">Sample config.yml files</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="3" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../../toolkit/postgres-config/">Database examples</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li data-navigation-tree-content class="my-1" data-depth="1" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit   border-none">
+          <button class="block -ml-[1.3rem] p-1 h-full">
+            <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[6px] h-[6px] transform ">
+          </button>
+          <span class="text-accent-green font-semibold text-inherit">Plans and pricing</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+    <ul class="pr-2 pl-6 text-terminal-black font-normal">
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../plan-overview/">CircleCI plans overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2"  data-current>
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  rounded-lg bg-fog ">
+          <span class="">Credits overview</span>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../plan-free/">Free Plan overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../plan-performance/">Performance Plan overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../plan-scale/">Scale Plan overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+  <li data-navigation-tree-content class="my-1" data-depth="2" >
+      <div data-navigation-tree-toggle class="flex items-center py-[8px] px-[12px] space-x-2 max-w-fit  ">
+          <a class="nav-link hover:text-link-on-light " href="../plan-server/">Server Plan overview</a>
+      </div>
+  </li>
+  <li data-navigation-tree-children class="">
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+      <a href="https://app.circleci.com/" class="fslex items-center mt-4 ml-2 gap-2 font-medium md:hidden bg-white" >
+        Go to Application
+        <div class="inline-flex h-[24px] w-[24px] bg-accent-green rounded items-center justify-center">
+          <img src="../../../_/img/arrow-back.svg" alt="Go to Application" class="rotate-180 w-[13px] h-[13px]">
+        </div>
+      </a>
+    </div>
+  </aside>
+</div>
+  <div class="flex flex-col w-full xl:items-center">
+    <!-- Component Dropdown for Mobile -->
+<div class="md:hidden flex justify-center px-[32px] mt-6 mb-4">
+  <div data-dropdown class="w-full relative flex justify-center items-center text-sm font-normal">
+  <!-- Trigger Button -->
+  <button
+    data-dropdown-button
+    class="px-4 py-3 border rounded-full text-sm m-auto w-full text-left flex items-center justify-between focus:border-link-on-light hover:border-link-on-light"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <span data-dropdown-selected>Guides</span>
+    <img src="../../../_/img/arrow-down.svg" alt="Toggle" class="w-[8px] h-[8px]">
+  </button>
+
+  <!-- Dropdown Menu -->
+  <ul
+    data-dropdown-menu
+    class="w-full absolute top-10 py-2 left-0 rounded-xl shadow-default bg-white max-h-60 overflow-y-scroll z-50 hidden"
+    role="listbox"
+    tabindex="-1"
+  >
+      <li
+        data-dropdown-option
+        class="ml-2 p-[8px] hover:bg-fog cursor-pointer rounded-lg max-w-fit"
+        role="option"
+        data-value=""
+        data-label="Home"
+      >
+          <a href="../../../">
+            Home
+          </a>
+      </li>
+      <li
+        data-dropdown-option
+        class="ml-2 p-[8px] hover:bg-fog cursor-pointer rounded-lg max-w-fit"
+        role="option"
+        data-value=""
+        data-label="Guides"
+      >
+          <a href="../../getting-started/first-steps/">
+            Guides
+          </a>
+      </li>
+      <li
+        data-dropdown-option
+        class="ml-2 p-[8px] hover:bg-fog cursor-pointer rounded-lg max-w-fit"
+        role="option"
+        data-value=""
+        data-label="Reference"
+      >
+          <a href="../../../reference/configuration-reference/">
+            Reference
+          </a>
+      </li>
+      <li
+        data-dropdown-option
+        class="ml-2 p-[8px] hover:bg-fog cursor-pointer rounded-lg max-w-fit"
+        role="option"
+        data-value=""
+        data-label="Server"
+      >
+          <a href="../../../server-admin/latest/overview/circleci-server-overview/">
+            Server
+          </a>
+      </li>
+      <li
+        data-dropdown-option
+        class="ml-2 p-[8px] hover:bg-fog cursor-pointer rounded-lg max-w-fit"
+        role="option"
+        data-value=""
+        data-label="Orbs"
+      >
+          <a href="../../../orbs/use/orb-intro/">
+            Orbs
+          </a>
+      </li>
+      <li
+        data-dropdown-option
+        class="ml-2 p-[8px] hover:bg-fog cursor-pointer rounded-lg max-w-fit"
+        role="option"
+        data-value=""
+        data-label="Contributors"
+      >
+          <a href="../../../contributors/docs-style/">
+            Contributors
+          </a>
+      </li>
+  </ul></div>
+</div>
+    <main class="article w-full max-w-screen">
+<div role="navigation" aria-label="Article Toolbar" class="flex flex-col max-w-[800px] md:items-center mx-[32px] md:ml-[3.5rem] lg:ml-12 mt-6 md:mt-12 md:flex-row text-sm font-normal" >
+  <nav aria-label="breadcrumbs">
+  <ul>
+    <li class="inline after:text-[#959595] after:content-['/'] after:px-2">
+      <a class="text-link-on-light font-normal" href="../../../">Home</a>
+    </li>
+    <li class="inline after:text-[#959595] after:content-['/'] after:px-2"><a class="text-[#343434] font-normal" href="../../getting-started/first-steps/">Guides</a></li>
+    <li class="inline after:text-[#959595] after:content-['/'] after:px-2">
+          <span class="text-[#343434] font-normal cursor-default">Plans and pricing</span>
+    </li>
+  </ul>
+</nav>
+</div>
+  <div class="flex flex-col lg:flex-row w-full">
+<article class="doc max-w-full overflow-x-hidden">
+<h1 class="page flex items-center gap-2">
+Using credits
+</h1>
+<div class="mt-5 mb-10 lg:mt-0 w-full md:w-fit max-w-full md:px-4 flex flex-col md:flex-row border border-vapor rounded-xl items-stretch justify-between ">
+    
+    <div class="flex items-center pl-3 md:pl-0 pr-3 py-2">
+      <!-- Article Last Updated -->
+        <a href="https://github.com/circleci/circleci-docs/commit/13df2eddd3d8333774c96681051b1287415c2a69" class="flex min-w-fit items-center text-link-on-light">
+          <img src="../../../_/img/calendar.svg" alt="Language Icon" class="inline-block h-5 w-5 mr-2">
+          18 days ago
+        </a>
+        <span class="text-xl px-2">&middot;</span>
+      <!-- Read Time -->
+        <span class="flex min-w-fit items-center">
+          16 min read
+        </span>
+    </div>
+  
+  <!-- Platform Tags -->
+    <div class="flex items-center min-w-fit space-x-1 px-3 py-2 md:py-0 border-t md:border-t-0 md:border-l border-inherit">
+        <span class="text-[10px] text-terminal-black border rounded-full py-1 px-1.5" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Cloud</span>
+    </div>
+  <!-- Edit Page -->
+    <a class="flex items-center py-2 md:py-0 pl-3 min-w-fit border-t md:border-t-0 md:border-l border-inherit text-link-on-light" href="https://github.com/circleci/circleci-docs/edit/main/docs/guides/modules/plans-pricing/pages/credits.adoc">
+      Contribute
+      <img src="../../../_/img/link-arrow.svg" alt="Go to Code" class="ml-2 inline-block w-[13px] h-[13px]">
+    </a>
+</div><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes how to find the available resources regarding credits with CircleCI.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Credits are used on CircleCI&#8217;s Free, Performance, Scale, and Server Plans. Each plan offers key CI/CD features, and some plans offer customization options depending on your needs.</p>
+</div>
+<div class="paragraph">
+<p>The right plan for you and your team will depend on several factors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How many users are on your team</p>
+</li>
+<li>
+<p>How much support you need (community and free support, standard support, or premium support)</p>
+</li>
+<li>
+<p>If you want access to different machine-types and resource classes</p>
+</li>
+<li>
+<p>If you want a limited or unlimited number of self-hosted runners</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can view the <a href="../plan-overview/" class="xref page">Plan overview</a> page for more information, or if you would like more details on what features are available per plan, view the individual plan pages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../plan-free/" class="xref page">Free Plan</a></p>
+</li>
+<li>
+<p><a href="../plan-performance/" class="xref page">Performance Plan</a></p>
+</li>
+<li>
+<p><a href="../plan-scale/" class="xref page">Scale Plan</a></p>
+</li>
+<li>
+<p><a href="../plan-server/" class="xref page">Server Plan</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take a look at the CircleCI <a href="https://circleci.com/pricing/">Pricing</a> page, and the <a href="https://circleci.com/product/features/resource-classes/">resource class comparison table</a>, to learn more about how credits are distributed across different machine types and resource classes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing-credit-usage"><a class="anchor" href="#managing-credit-usage"></a>Managing credit usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Properly managing network and storage usage can potentially lower the amount of credits used per month. If you would like to find out more about managing network and storage usage, see the <a href="../../optimize/persist-data/" class="xref page">Persisting data</a> page.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="open-source-credit-usage"><a class="anchor" href="#open-source-credit-usage"></a>Open source credit usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Organizations on our Free Plan can use up to 400,000 credits per month, for free, for Linux open source builds. Using our Free Plan and keeping your repository public will enable this for you. Open-source credit availability and limits are not visible in the CircleCI web app.</p>
+</div>
+<div class="paragraph">
+<p>If you build on macOS, we also offer organizations on our Free Plan 30,000 credits every month to use on macOS open source builds. To find out more, visit the CircleCI <a href="https://support.circleci.com/hc/en-us">support portal</a>, which includes an Ask AI option to get you the information you need.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting-job-is-queued"><a class="anchor" href="#troubleshooting-job-is-queued"></a>Troubleshooting: Am I charged if my job is "queued" or "preparing"?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>No. If you are notified that a job is "queued", it indicates that your job is waiting due to a <strong>plan</strong> or <strong>concurrency</strong> limit. If your job indicates that it is "preparing", it means that CircleCI is setting up or <em>dispatching</em> your job so that it may run.</p>
+</div>
+<div class="paragraph">
+<p>If your jobs use the Docker executor and you find that they are "preparing" for quite some time, you may be able to reduce the delay by using more recent Docker images. See <a href="../../execution-managed/building-docker-images/" class="xref page">Building Docker images</a> for more information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="questions-and-comments"><a class="anchor" href="#questions-and-comments"></a>Questions and comments</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consider reading the section below on <a href="#billing-faqs">billing</a>. For any further questions, do not hesitate to open a <a href="https://support.circleci.com/hc/en-us/requests/new">open a support ticket</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="billing-faqs"><a class="anchor" href="#billing-faqs"></a>FAQs</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="what-are-credits"><a class="anchor" href="#what-are-credits"></a>What are credits?</h3>
+<div class="paragraph">
+<p>Credits are used to pay for users and usage based on machine type, size, and features such as Docker Layer Caching.</p>
+</div>
+<div class="paragraph">
+<p>For example, the 25,000 credit package would provide 2,500 build minutes when using a Docker or Linux "medium" compute at 10 credits per minute. CircleCI provides multiple compute sizes so you can optimize builds between performance (improved developer productivity) and value.</p>
+</div>
+<div class="paragraph">
+<p>When applicable, build time can be further reduced by using parallelism, which splits the job into multiple tests that are executed at the same time. With 2x parallelism, a build that usually runs for 2,500 minutes could be executed in 1,250 minutes, further improving developer productivity. Note that when two executors are running in parallel for 1,250 minutes each, total build time remains 2,500 minutes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buy-credits-in-any-increments"><a class="anchor" href="#buy-credits-in-any-increments"></a>How do I buy credits?</h3>
+<div class="paragraph">
+<p>Every month, you are charged for your selected credit package at the beginning of the month.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-do-i-pay-for"><a class="anchor" href="#what-do-i-pay-for"></a>What do I pay for?</h3>
+<div class="paragraph">
+<p>You can choose to pay for premium features per active user, compute, and optionally, premium support.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Access to features, such as new machine sizes, are paid with a monthly fee of 25,000 credits per active user (not including applicable taxes).</p>
+</li>
+<li>
+<p>Compute is paid for monthly in credits for the machine size and duration you use:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Credits are sold in packages of 25,000 at $15 each (not including applicable taxes).</p>
+</li>
+<li>
+<p>Credits roll over each month and expire after one year.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Docker Layer Caching (DLC) is paid for with credits per usage, similar to compute credits.</p>
+</li>
+<li>
+<p>You can find a full explanation of how credits and features are priced <a href="https://circleci.com/pricing/">here on our pricing page</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="run-out-of-credits"><a class="anchor" href="#run-out-of-credits"></a>What happens when I run out of credits?</h3>
+<div class="paragraph">
+<p>On the <strong>Performance Plan</strong>, when you reach 0 credits, you will be refilled approximately 25% of your credit subscription, with a minimum refill of 25,000 credits. For example, if your monthly package size is 100,000 credits, you will automatically be refilled 25,000 credits when you reach 0 remaining credits. Credits are priced at $.0006 each, not including applicable taxes.</p>
+</div>
+<div class="paragraph">
+<p>If you notice that your account is receiving repeated refills, review your credit usage by logging in to the CircleCI web app, then select <span class="menuseq"><b class="menu">Plan</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Plan Usage</b></span>. In most cases, increasing your credit package should minimize repeat refills. You can manage your plan by clicking <code>Plan Overview</code>.</p>
+</div>
+<div class="paragraph">
+<p>On the <strong>Scale/Custom Plan</strong>, you have the option to agree to use Credit Auto-Refill (CAR). When your usage gets to 20% of credit purchase, you receive a notice that credit is getting low. If your credit gets to 10%, and you have not made another purchase, you receive a refill of either 25% (default) or 10% of your credit purchase.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You buy 100M credits.</p>
+</li>
+<li>
+<p>Get notice at 20M credits.</p>
+</li>
+<li>
+<p>CAR at 10M credits.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>CAR can be interrupted with a supplemental purchase.</p>
+</div>
+<div class="paragraph">
+<p>You can decline CAR, but you will not get a notice at 20%, and if your credits deplete to 0, your service will be interrupted until you make another purchase.</p>
+</div>
+<div class="paragraph">
+<p>On the <strong>Free Plan</strong>, jobs will fail to run once you have run out of credits.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="do-credits-expire"><a class="anchor" href="#do-credits-expire"></a>Do credits expire?</h3>
+<div class="paragraph">
+<p><strong>Performance Plan</strong>: Credits expire one year after purchase. Unused credits will be forfeited when the account subscription is canceled.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-do-i-pay"><a class="anchor" href="#how-do-i-pay"></a>How do I pay?</h3>
+<div class="paragraph">
+<p>You can pay from inside the CircleCI app for monthly pricing.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="when-do-i-pay"><a class="anchor" href="#when-do-i-pay"></a>When do I pay?</h3>
+<div class="paragraph">
+<p>On the <strong>Performance Plan</strong>, at the beginning of your billing cycle, you will be charged for premium support tiers and your monthly credit allocation. Any subsequent credit refills <em>during</em> the month (such as the auto-refilling at approximately 25% when there are 0 credits remaining) will be paid <em>at the time of the refill</em>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-is-prepaid-billing"><a class="anchor" href="#what-is-prepaid-billing"></a>What is prepaid billing?</h3>
+<div class="paragraph">
+<p>Prepaid billing is a payment option for customers on the Performance Plan. Prepaid Billing allows you to purchase credits in bulk, pay upfront, and be able to get discounted prices for credits based on volume purchased.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-can-i-get-on-prepaid-billing"><a class="anchor" href="#how-can-i-get-on-prepaid-billing"></a>How can I get on prepaid billing?</h3>
+<div class="paragraph">
+<p>All Performance Plan customers can choose to get on prepaid billing through the CircleCI web app. To access this option, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select <strong>Plan</strong> in the web app</p>
+</li>
+<li>
+<p>Select the <strong>Manage</strong> tab</p>
+</li>
+<li>
+<p>Select to <strong>Set up and switch</strong> to get started switching to prepaid billing</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="i-still-have-credits-from-my-monthly-subscription"><a class="anchor" href="#i-still-have-credits-from-my-monthly-subscription"></a>I still have credits from my Monthly subscription, what happens if I get on prepaid billing now?</h3>
+<div class="paragraph">
+<p>You will still have access to any balance credits that were previously purchased, and the 12 month expiry date will remain.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="i-selected-prepaid-billing-but-i-didnt-receive-a-discount"><a class="anchor" href="#i-selected-prepaid-billing-but-i-didnt-receive-a-discount"></a>I selected prepaid billing but I didn’t receive a discount. Why?</h3>
+<div class="paragraph">
+<p>Discounting for prepaid billing starts at a purchase volume of 5 Million credits and up.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-happens-when-i-run-out-of-all-my-prepaid-billing-credits"><a class="anchor" href="#what-happens-when-i-run-out-of-all-my-prepaid-billing-credits"></a>What happens when I run out of all my prepaid billing credits?</h3>
+<div class="paragraph">
+<p>Similar to what happens today on Performance plans, when you run out of credits your credit package will be automatically renewed at the purchase level you have selected.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="when-will-i-be-charged-for-my-prepaid-billing-purchase"><a class="anchor" href="#when-will-i-be-charged-for-my-prepaid-billing-purchase"></a>When will I be charged for my prepaid billing purchase?</h3>
+<div class="paragraph">
+<p>Upon selecting prepaid billing, your credit card will be charged immediately. Subsequently, when you run out of credits, your credit card will be charged again to provide you with a refill.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="i-want-to-change-my-upcoming-prepaid-billing-refill"><a class="anchor" href="#i-want-to-change-my-upcoming-prepaid-billing-refill"></a>I want to change my upcoming prepaid billing refill, how do I do that?</h3>
+<div class="paragraph">
+<p>You can follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select <strong>*Plan</strong> in the web app</p>
+</li>
+<li>
+<p>Select the <strong>Manage</strong> tab</p>
+</li>
+<li>
+<p>Select the pencil icon in the <strong>Credits</strong> section to edit your auto refill rate</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="do-i-still-get-bonus-credits-and-5-free-seats"><a class="anchor" href="#do-i-still-get-bonus-credits-and-5-free-seats"></a>Do I still get 30,000 bonus credits and 5 free seats on prepaid billing?</h3>
+<div class="paragraph">
+<p>Yes, all prepaid billing customers still receive the benefit of 30,000 credits and 5 free user seats every month.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="share-plans-across-organizations-billed-centrally"><a class="anchor" href="#share-plans-across-organizations-billed-centrally"></a>Is there a way to share plans across organizations and have them billed centrally?</h3>
+<div class="paragraph">
+<p>Yes, log in to the CircleCI web app, then navigate to <span class="menuseq"><b class="menu">Plan</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Share &amp; Transfer</b></span>.</p>
+</div>
+<div class="paragraph">
+<p>On non-free plans, you can share your plan with free organizations for which you have admin access using the <code>Add Shared Organization</code> option. All orgs you have shared your plan with are listed on the Share &amp; Transfer page. Child organizations will bill all credits and other usage to the parent org.</p>
+</div>
+<div class="paragraph">
+<p>On non-free plans, you can transfer your plan to another free organization for which you have admin access using the <code>Transfer Plan</code> option. When you transfer a paid plan to another org, your org will be downgraded to the Free Plan.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="container-used-for-under-one-minute-pay-for-a-full-minute"><a class="anchor" href="#container-used-for-under-one-minute-pay-for-a-full-minute"></a>If a container is used for under one minute, do I have to pay for a full minute?</h3>
+<div class="paragraph">
+<p>You pay to the next nearest credit. First we round up to the nearest second, and then up to the nearest credit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculate-monthly-storage-and-network-costs"><a class="anchor" href="#calculate-monthly-storage-and-network-costs"></a>How do I calculate my monthly storage and network costs?</h3>
+<div class="paragraph">
+<p>Calculate your monthly storage and network costs by finding your storage and network usage on the <a href="https://app.circleci.com/">CircleCI web app</a> by navigating to <span class="menuseq"><b class="menu">Plan</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Plan</b></span> Usage.</p>
+</div>
+<div class="sect3">
+<h4 id="storage"><a class="anchor" href="#storage"></a>Storage</h4>
+<div class="paragraph">
+<p>To calculate monthly storage costs from your daily usage, select the <strong>Storage</strong> tab to see if your organization has accrued any overages beyond the GB-monthly allotment. Your overage (GB-Months/TB-Months) can be multiplied by 420 credits to estimate the total monthly costs. Example: 2 GB-Months overage x 420 credits = 840 credits ($.50).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="network"><a class="anchor" href="#network"></a>Network</h4>
+<div class="paragraph">
+<p>Billing for network usage is only applicable to traffic from CircleCI to self-hosted runners. Read more on the <a href="../../optimize/persist-data/#overview-of-network-and-storage-transfer" class="xref page">Persisting data</a> page.</p>
+</div>
+<div class="paragraph">
+<p>Your network overage GB/TB can be multiplied by 420 credits to estimate the total monthly costs. Example: 2 GB-Months overage x 420 credits = 840 credits ($.50).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculate-monthly-IP-ranges-costs"><a class="anchor" href="#calculate-monthly-IP-ranges-costs"></a>How do I calculate my monthly IP ranges cost?</h3>
+<div class="paragraph">
+<p>Calculate your monthly IP ranges costs by finding your IP ranges usage on the <a href="https://app.circleci.com/">CircleCI app</a> by navigating to Plan &gt; Plan Usage.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the <strong>IP Ranges Usage</strong> summary, you can navigate to the <strong>IP Ranges</strong> tab to find more details about your data usage. In this tab, the IP ranges usage value represents the raw number of bytes in or out of the Docker container during execution of a job with IP ranges enabled.</p>
+</div>
+<div class="paragraph">
+<p>This number includes the job&#8217;s overall network transfer <em>and</em> any other bytes that go in or out of the Docker container. Data used to pull in the Docker image to the container before the job starts executing will <em>not incur usage costs</em> for jobs with IP ranges enabled.</p>
+</div>
+<div class="paragraph">
+<p>This feature will consume 450 credits from your account for each GB of data used for jobs with IP ranges enabled. You can also view job-specific details of IP ranges usage in the <strong>Resources</strong> tab on the <strong>Job Details</strong> UI page. See <a href="../../security/ip-ranges/#pricing" class="xref page">IP ranges pricing</a> for more information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="predict-monthly-IP-ranges-cost-without-enabling-feature-first"><a class="anchor" href="#predict-monthly-IP-ranges-cost-without-enabling-feature-first"></a>How do I predict my monthly IP ranges cost without enabling the feature first?</h3>
+<div class="paragraph">
+<p>You can view an approximation of network transfer for any Docker job (excluding Remote Docker) in the <strong>Resources</strong> tab on the Job Details UI page. Convert this value to GB if it is not already in GB and multiply by 450 credits to predict the approximate cost of enabling IP ranges on that Docker job.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="per-active-user-pricing"><a class="anchor" href="#per-active-user-pricing"></a>Why does CircleCI have per-active-user pricing?</h3>
+<div class="paragraph">
+<p>Credit usage covers access to compute. We prefer to keep usage costs as low as possible to encourage frequent job runs, which is the foundation of a good CI practice. Per-active-user fees cover access to platform features and job orchestration. This includes features like dependency caching, artifact caching, and workspaces, all of which speed up build times without incurring additional compute cost.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-constitutes-an-active-user"><a class="anchor" href="#what-constitutes-an-active-user"></a>What is an "active" user?</h3>
+<div class="paragraph">
+<p>An active user is any user who triggers the use of compute resources on non-OSS projects. This includes activities such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Commits from users that trigger builds, including PR Merge commits</p>
+</li>
+<li>
+<p>Re-running jobs in the CircleCI web application, including <a href="../../execution-managed/ssh-access-jobs/" class="xref page">SSH debug</a></p>
+</li>
+<li>
+<p>Approving <a href="../../orchestrate/workflows/#holding-a-workflow-for-a-manual-approval" class="xref page">manual jobs</a> (approver will be considered the actor of all downstream jobs).</p>
+</li>
+<li>
+<p>Using scheduled workflows</p>
+</li>
+<li>
+<p>Machine users</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If your project is <a href="../../integration/oss/" class="xref page">open-source</a> you will <strong>not</strong> be considered an active user.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To find a list of your active users, log in to the CircleCI web app, select <span class="menuseq"><b class="menu">Plan</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Plan Usage</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Users</b></span>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="charged-job-is-queued-or-preparing"><a class="anchor" href="#charged-job-is-queued-or-preparing"></a>Am I charged if my job is "Queued" or "Preparing"?</h3>
+<div class="paragraph">
+<p>No. If you are notified that a job is "queued", it indicates that your job is waiting due to a <strong>plan</strong> or <strong>concurrency</strong> limit. If your job indicates that it is "preparing", it means that CircleCI is setting up or <em>dispatching</em> your job so that it may run.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-renewal-dates"><a class="anchor" href="#other-renewal-dates"></a>What are the other renewal dates?</h3>
+<div class="paragraph">
+<p>The first credit card charge on the day you upgrade to a paid plan or change paid plans, in addition to the following charges from CircleCI:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>On the monthly renewal date if your team is on the monthly plan.</p>
+</li>
+<li>
+<p>On the annual renewal date if your team is on the annual plan.</p>
+</li>
+<li>
+<p>On the last day of the month if your team is on the annual plan and there is an outstanding balance from adding new users or utilizing more credits.</p>
+</li>
+<li>
+<p>If you are on the Performance Plan, anytime your team&#8217;s credit balance drops below your preset limit, another credit purchase will be processed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="credit-plans-for-open-source-projects"><a class="anchor" href="#credit-plans-for-open-source-projects"></a>Are there credit plans for open source projects?</h3>
+<div class="paragraph">
+<p>Open source organizations on our <strong>Free Plan</strong> receive 400,000 free credits per month that can be spent on Linux open source projects.  Open-source credit availability and limits will not be visible in the UI.</p>
+</div>
+<div class="paragraph">
+<p>If you build on macOS, we also offer organizations on our Free Plan 25,000 free credits per month to use on macOS open source builds. To find out more, visit the CircleCI <a href="https://support.circleci.com/hc/en-us">support portal</a>, which includes an Ask AI option to get you the information you need. Free credits for macOS open source builds can be used on a maximum of 2 concurrent jobs per organization.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="discounts-for-open-source-performance-plan"><a class="anchor" href="#discounts-for-open-source-performance-plan"></a>Can I get discounts for open source on the Performance Plan?</h3>
+<div class="paragraph">
+<p>CircleCI no longer offers discounts for open source customers on the Performance Plan.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="charge-for-docker-layer-caching"><a class="anchor" href="#charge-for-docker-layer-caching"></a>Why does CircleCI charge for Docker layer caching?</h3>
+<div class="paragraph">
+<p>Docker layer caching (DLC) reduces build times on pipelines where Docker images are built by only rebuilding Docker layers that have changed (read more on the <a href="../../optimize/docker-layer-caching/" class="xref page">Docker Layer Caching</a> page). DLC costs 200 credits per job run.</p>
+</div>
+<div class="paragraph">
+<p>To estimate your DLC cost, look at the jobs in your config file with Docker layer caching enabled, and the number of Docker images you are building in those jobs. In some cases, a job that appears only once in a config file can run multiple times in a pipeline. For example, with parallelism enabled.</p>
+</div>
+<div class="paragraph">
+<p>Note that the benefits of Docker layer caching are only apparent on pipelines that are building Docker images, and reduces image build times by reusing the unchanged layers of the application image built during your job. If your pipeline does not include a job where Docker images are built, Docker layer caching will provide no benefit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="support-plan-info"><a class="anchor" href="#support-plan-info"></a>What does a paid support plan include?</h3>
+<div class="paragraph">
+<p>By purchasing a 24 x 7 coverage support plan with CircleCI, you can change the response time from our Support team to be as low as 30 minutes. This ensures that any issues you have while using CircleCI are investigated as quickly as possible. For more information, <a href="https://support.circleci.com/hc/en-us/articles/4415357235995-Support-Plans-Priority-Response">refer to this support article</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="On This Page" data-levels="6">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+  <footer class="mt-10 mb-12 border-t border-vapor w-full text-sm px-12 pt-6">
+  <!--
+  <div class="flex flex-col md:flex-row md:items-center">
+    <h4 class="text-xl font-normal">
+      Was this page helpful ?
+    </h4>
+    <div class="inline-flex mt-6 md:mt-0 md:ml-8 space-x-4">
+      <button class="rounded-md px-2 py-2 inline-flex justify-center items-center border border-vapor space-x-1">
+        <img src="../../../_/img/thumbs-up.svg" alt="Thumbs Up" class="inline-block w-4 h-4">
+        <span class="font-normal">
+          Yes
+        </span>
+      </button>
+      <button class="rounded-md px-2 py-2 inline-flex justify-center items-center border border-vapor space-x-1">
+        <img src="../../../_/img/thumbs-down.svg" alt="Thumbs Up" class="inline-block w-4 h-4">
+        <span class="font-normal">
+          No
+        </span>
+      </button>
+    </div>
+
+  </div>
+  -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+
+    <div class="rounded-lg border border-vapor p-[24px] space-y-4">
+      <h4 class="text-lg font-medium">
+        Suggest an edit to this page
+      </h4>
+
+      <ul class="space-y-2 text-link-on-light">
+        <li class="group flex items-center">
+          <a href="https://github.com/circleci/circleci-docs/edit/main/docs/guides/modules/plans-pricing/pages/credits.adoc">Make a contribution</a>
+          <img src="../../../_/img/link-arrow.svg" alt="Go to Code" class="invisible group-hover:visible ml-2 inline-block w-[13px] h-[13px]">
+        </li>
+        <li class="group flex items-center">
+          <a href="https://github.com/circleci/circleci-docs/blob/main/CONTRIBUTING.md">Learn how to contribute</a>
+          <img src="../../../_/img/link-arrow.svg" alt="Go to Code" class="invisible group-hover:visible ml-2 inline-block w-[13px] h-[13px]">
+        </li>
+      </ul>
+    </div>
+
+    <div class="rounded-lg border border-vapor p-[24px] space-y-4">
+      <h4 class="text-lg font-medium">
+        Still need help?
+      </h4>
+
+      <ul class="space-y-2 text-link-on-light">
+        <li class="group flex items-center">
+          <a href="https://discuss.circleci.com/">Ask the CircleCI community</a>
+          <img src="../../../_/img/link-arrow.svg" alt="Go to Code" class="invisible group-hover:visible ml-2 inline-block w-[13px] h-[13px]">
+        </li>
+        <li class="group flex items-center">
+          <a href="https://circleci.com/research/">Join the research community</a>
+          <img src="../../../_/img/link-arrow.svg" alt="Go to Code" class="invisible group-hover:visible ml-2 inline-block w-[13px] h-[13px]">
+        </li>
+        <li class="group flex items-center">
+          <a href="https://support.circleci.com/hc/en-us/">Visit our support site</a>
+          <img src="../../../_/img/link-arrow.svg" alt="Go to Code" class="invisible group-hover:visible ml-2 inline-block w-[13px] h-[13px]">
+        </li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+</main>
+    <footer class="mt-6 pb-24 w-full px-12">
+
+  <img src="../../../_/img/logo.svg" alt="CircleCI Logo" class="h-[44px]">
+
+  <div class="font-normal mt-6">
+    <ul class="flex space-x-6 space-y-4 flex-col md:flex-row">
+      <li>
+        <p>
+          © CircleCI, Inc. All rights reserved.
+        </p>
+      </li>
+      <ul class="flex flex-wrap space-x-6 space-y-4">
+        <li>
+          <a href="https://circleci.com/legal/terms-of-service/">Terms of Service</a>
+        </li>
+        <li>
+          <a href="https://circleci.com/legal/privacy/">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="https://circleci.com/legal/cookie-policy/">Cookie Policy</a>
+        </li>
+        <li>
+          <a href="https://circleci.com/security/">Security</a>
+        </li>
+      </ul>
+
+    </ul>
+    <ul class="flex space-x-4 items-center mt-5">
+      <li>
+        <a href="https://github.com/circleci">
+          <img src="../../../_/img/github-icon.svg" alt="Github Socials" class="h-4 w-4">
+        </a>
+      </li>
+      <li>
+        <a href="https://circleci.com/blog/feed.xml">
+          <img src="../../../_/img/rss-icon.svg" alt="RSS Socials" class="h-4 w-4">
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/circleci">
+          <img src="../../../_/img/x-icon.svg" alt="X Socials" class="h-4 w-4">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.twitch.tv/circleci">
+          <img src="../../../_/img/twitch-icon.svg" alt="Twitch Socials" class="h-4 w-4">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/circleci">
+          <img src="../../../_/img/linkedin-icon.svg" alt="LinkedIn Socials" class="h-4 w-4">
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+<script src="../../../_/js/vendor/simple-datatables.js"></script>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </div>
+</div>
+  </body>
+</html>
